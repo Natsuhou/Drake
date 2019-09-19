@@ -11,12 +11,13 @@ public class HelpMenu {
 
     public HelpMenu(User u) {
         this.user = u;
+        builder = new EmbedBuilder()
+                .setAuthor(user.getName(), user.getDefaultAvatarUrl());
     }
     public EmbedBuilder HelpMenu(String drakeIconURL) {
         return builder
-                .setAuthor(user.getName(), user.getAvatarUrl())
-                .setTitle("Infernal Drake")
-                .setDescription("This is the help menu!")
+                .setTitle("Help Menu")
+                .setDescription("Info on usage of certain commands")
                 .setThumbnail(drakeIconURL)
                 .setColor(Color.red)
                 .addField("!whois [args]", "Find a user's League Account", true);
